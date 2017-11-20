@@ -12,7 +12,7 @@ pipeline {
         NPM_CONFIG_PREFIX = '/root/.npm'
       }
       steps {
-        sh 'mkdir /root/.npm'
+        sh 'wohami'
         sh 'npm install'
       }
     }
