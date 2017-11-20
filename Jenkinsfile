@@ -13,4 +13,7 @@ pipeline {
       }
     }
   }
+  environment {
+    NPM_CONFIG_PREFIX = '~/.npm'
+  }
 }
