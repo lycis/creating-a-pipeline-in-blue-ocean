@@ -1,4 +1,6 @@
 pipeline {
+  triggers { pollSCM('H */4 * * 1-5') }
+  options { buildDiscarder(logRotator(numToKeepStr: '1')) }
   agent {
     docker {
       image 'node:6-alpine'
@@ -12,7 +14,6 @@ pipeline {
         NPM_CONFIG_PREFIX = '/root/.npm'
       }
       steps {
-        sh 'mkdir /.npm'
         sh 'npm install'
       }
     }
