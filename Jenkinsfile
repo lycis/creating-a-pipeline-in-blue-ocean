@@ -24,5 +24,11 @@ pipeline {
         sh './jenkins/scripts/test.sh'
       }
     }
+    stage('deliver') {
+      steps {
+        sh './jenkins/scripts/deliver.ah'
+        input 'Finished using the web site? (Click "Proceed" to continue)'
+      }
+    }
   }
 }
